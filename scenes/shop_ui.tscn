@@ -1,0 +1,137 @@
+[gd_scene load_steps=11 format=3 uid="uid://cnlnlk1r5s0ry"]
+
+[ext_resource type="Texture2D" uid="uid://dwd4g0d4qpvan" path="res://assets/inventory/large_board.png" id="1_cgymi"]
+[ext_resource type="Script" path="res://scenes/shop_ui.gd" id="1_wq8a6"]
+[ext_resource type="FontFile" uid="uid://bb31u1jsyyk73" path="res://assets/monogram.ttf" id="3_1pcfh"]
+[ext_resource type="Texture2D" uid="uid://w5m3lqjuf304" path="res://assets/shop/teemo_ui_11.png" id="4_apymj"]
+[ext_resource type="Texture2D" uid="uid://b6oi8xan53q5d" path="res://assets/shop/teemo_ui_12.png" id="5_5wrv2"]
+[ext_resource type="Texture2D" uid="uid://d3qu3mmu018yh" path="res://assets/shop/teemo_ui_13.png" id="6_x1yhw"]
+[ext_resource type="Texture2D" uid="uid://81f50qynjsi" path="res://assets/shop/teemo_ui_14.png" id="7_3bndf"]
+[ext_resource type="Texture2D" uid="uid://dhvl3ftyaewvy" path="res://assets/exit-button.png" id="8_dlcqk"]
+[ext_resource type="Texture2D" uid="uid://myuplauekgjd" path="res://assets/shop/teemo_ui_15.png" id="8_hsggq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_al5fp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_apymj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5wrv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x1yhw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3bndf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hsggq")
+}],
+"loop": false,
+"name": &"grateful",
+"speed": 2.0
+}]
+
+[node name="Shop UI" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -473.0
+offset_top = -313.0
+offset_right = 461.0
+offset_bottom = 308.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wq8a6")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -627.0
+offset_top = -425.5
+offset_right = 595.0
+offset_bottom = 471.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_cgymi")
+
+[node name="Header" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 65.0
+offset_right = 1064.0
+offset_bottom = 129.0
+theme_override_colors/font_color = Color(0.396078, 0.192157, 0.0666667, 1)
+theme_override_fonts/font = ExtResource("3_1pcfh")
+theme_override_font_sizes/font_size = 80
+text = "Welcome to the Farm Shop"
+
+[node name="Container" type="Control" parent="NinePatchRect"]
+anchors_preset = 0
+offset_left = 94.0
+offset_top = 81.0
+offset_right = 285.0
+offset_bottom = 268.0
+
+[node name="Teemo" type="AnimatedSprite2D" parent="NinePatchRect/Container"]
+position = Vector2(104, 112)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_al5fp")
+animation = &"grateful"
+frame_progress = 0.693479
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 145.0
+offset_right = 569.0
+offset_bottom = 302.0
+scale = Vector2(4, 4)
+scroll_vertical_custom_step = 1.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="GridContainer" type="VBoxContainer" parent="NinePatchRect/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 28
+
+[node name="Purchases" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 382.0
+offset_right = 152.0
+offset_bottom = 458.0
+scale = Vector2(5, 5)
+columns = 2
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 336.0
+offset_right = 296.0
+offset_bottom = 386.0
+theme_override_colors/font_color = Color(0.396078, 0.192157, 0.0666667, 1)
+theme_override_fonts/font = ExtResource("3_1pcfh")
+theme_override_font_sizes/font_size = 50
+text = "Purchases"
+
+[node name="CloseButton" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 953.0
+offset_top = -92.0
+offset_right = 1025.0
+offset_bottom = -27.0
+texture = ExtResource("8_dlcqk")
+
+[connection signal="animation_finished" from="NinePatchRect/Container/Teemo" to="." method="_on_teemo_animation_finished"]
+[connection signal="gui_input" from="CloseButton" to="." method="_on_close_button_gui_input"]

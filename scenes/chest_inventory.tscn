@@ -1,0 +1,105 @@
+[gd_scene load_steps=4 format=3 uid="uid://cws0xtdi21dno"]
+
+[ext_resource type="Script" path="res://scenes/chest_inventory_ui.gd" id="1_eng6i"]
+[ext_resource type="Texture2D" uid="uid://dwd4g0d4qpvan" path="res://assets/inventory/large_board.png" id="1_eqp7x"]
+[ext_resource type="PackedScene" uid="uid://cdu1jfkmc0nvi" path="res://scenes/inventory_slot.tscn" id="2_x6bs8"]
+
+[node name="ChestInventory" type="Control"]
+visible = false
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 56.0
+offset_right = 40.0
+offset_bottom = 56.0
+script = ExtResource("1_eng6i")
+
+[node name="Container" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 112.0
+offset_right = 617.0
+offset_bottom = 528.0
+texture = ExtResource("1_eqp7x")
+
+[node name="GridContainer" type="GridContainer" parent="Container"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 18.0
+offset_right = 277.0
+offset_bottom = 222.0
+scale = Vector2(1.75, 1.75)
+columns = 6
+
+[node name="ChestSlot1" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2
+
+[node name="ChestSlot2" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2
+
+[node name="ChestSlot3" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2
+
+[node name="ChestSlot4" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2
+
+[node name="ChestSlot5" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2
+
+[node name="ChestSlot6" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2
+
+[node name="ChestSlot7" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2
+
+[node name="ChestSlot8" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2
+
+[node name="ChestSlot9" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2
+
+[node name="ChestSlot10" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2
+
+[node name="ChestSlot11" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2
+
+[node name="ChestSlot12" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2
+
+[node name="ChestSlot13" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2
+
+[node name="ChestSlot14" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2
+
+[node name="ChestSlot15" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2
+
+[node name="ChestSlot16" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2
+
+[node name="ChestSlot17" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2
+
+[node name="ChestSlot18" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2
+
+[node name="ChestSlot19" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2
+
+[node name="ChestSlot20" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2
+
+[node name="ChestSlot21" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2
+
+[node name="ChestSlot22" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2
+
+[node name="ChestSlot23" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2
+
+[node name="ChestSlot24" parent="Container/GridContainer" groups=["chest_slots"] instance=ExtResource("2_x6bs8")]
+layout_mode = 2

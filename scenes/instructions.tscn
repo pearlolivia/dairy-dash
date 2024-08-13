@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://b8wivwirnh3is"]
+
+[ext_resource type="Texture2D" uid="uid://cvv35h5kudefj" path="res://assets/instructions/instruction-box.png" id="1_aqbq1"]
+[ext_resource type="Script" path="res://scenes/instructions.gd" id="1_y38nu"]
+[ext_resource type="Texture2D" uid="uid://dfnfyqqv8ctni" path="res://assets/instructions/teemo_ui_18.png" id="2_gm5an"]
+[ext_resource type="FontFile" uid="uid://bb31u1jsyyk73" path="res://assets/monogram.ttf" id="3_rphxt"]
+[ext_resource type="Texture2D" uid="uid://bco8xbraf4ju8" path="res://assets/instructions/teemo_ui_16.png" id="3_uuawc"]
+[ext_resource type="Texture2D" uid="uid://tp0l04md0pfq" path="res://assets/instructions/teemo_ui_19.png" id="4_n20ta"]
+[ext_resource type="Texture2D" uid="uid://b6iv71kgobump" path="res://assets/instructions/teemo_ui_17.png" id="5_oogh6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0s77b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gm5an")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uuawc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_n20ta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oogh6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Instructions" type="Control"]
+z_index = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_y38nu")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 176.0
+offset_bottom = 64.0
+scale = Vector2(3, 3)
+texture = ExtResource("1_aqbq1")
+
+[node name="Instructions" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 64.0
+offset_right = 488.0
+offset_bottom = 153.0
+theme_override_colors/default_color = Color(0.196078, 0.0823529, 0.0156863, 1)
+theme_override_fonts/normal_font = ExtResource("3_rphxt")
+theme_override_font_sizes/normal_font_size = 21
+text = "Welcome to Dairy Dash! Help Titch fulfil the daily dairy orders. Walk over to a cow and click on her to milk her. (Move with WASD on keyboard)"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(96, 103)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_0s77b")
+autoplay = "default"
+frame_progress = 0.577047
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 20.0
+offset_right = 505.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0.196078, 0.0823529, 0.0156863, 1)
+theme_override_fonts/font = ExtResource("3_rphxt")
+theme_override_font_sizes/font_size = 25
+text = "Click on Titch to close"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="gui_input" from="TextureRect" to="." method="_on_texture_rect_gui_input"]

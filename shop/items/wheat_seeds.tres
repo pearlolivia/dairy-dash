@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ShopItem" load_steps=4 format=3 uid="uid://hanfo02hf8eb"]
+
+[ext_resource type="Script" path="res://shop/shop_item.gd" id="1_d0r72"]
+[ext_resource type="Resource" uid="uid://fptveyfj3bas" path="res://inventory/items/wheat_seeds.tres" id="1_ux7np"]
+[ext_resource type="Texture2D" uid="uid://co7oxctfhqlu5" path="res://assets/items/item_10.png" id="2_s3q5g"]
+
+[resource]
+script = ExtResource("1_d0r72")
+item = ExtResource("1_ux7np")
+item_name = "Wheat Seeds"
+product = ExtResource("2_s3q5g")
+price = 1.0

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://ejpjqesjq8lp"]
+
+[ext_resource type="Texture2D" uid="uid://cwisqd1iq4a6q" path="res://assets/chest/chest_0.png" id="1_smbvy"]
+[ext_resource type="Script" path="res://scenes/delivery_bin.gd" id="1_xqymb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7itdd"]
+size = Vector2(48, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wyfqh"]
+size = Vector2(54, 49)
+
+[node name="DeliveryBin" type="RigidBody2D"]
+script = ExtResource("1_xqymb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_smbvy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_7itdd")
+
+[node name="DeliveryBinCollider" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeliveryBinCollider"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_wyfqh")
+
+[connection signal="area_entered" from="DeliveryBinCollider" to="." method="_on_delivery_bin_collider_area_entered"]
+[connection signal="area_exited" from="DeliveryBinCollider" to="." method="_on_delivery_bin_collider_area_exited"]

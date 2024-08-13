@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdu1jfkmc0nvi"]
+
+[ext_resource type="Texture2D" uid="uid://1pm8o5lhrr8h" path="res://assets/inventory/inventory_slot.png" id="1_wssig"]
+[ext_resource type="Script" path="res://scenes/inventory_slot_ui.gd" id="2_k3u3y"]
+
+[node name="Slot" type="TextureRect"]
+process_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -24.0
+offset_right = 56.0
+offset_bottom = 24.0
+grow_vertical = 2
+texture = ExtResource("1_wssig")
+script = ExtResource("2_k3u3y")
+
+[node name="Item" type="Sprite2D" parent="."]
+process_mode = 3
+position = Vector2(24, 24)
+
+[node name="Quantity" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -21.0
+offset_right = 11.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "0"
+horizontal_alignment = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

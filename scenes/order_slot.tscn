@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://d5vs8i5nmu22"]
+
+[ext_resource type="Texture2D" uid="uid://1pm8o5lhrr8h" path="res://assets/inventory/inventory_slot.png" id="1_vx8oj"]
+[ext_resource type="Texture2D" uid="uid://d2yksb1j8sw1o" path="res://assets/items/milk_empty.png" id="2_6isig"]
+[ext_resource type="Script" path="res://scenes/order_slot.gd" id="2_t0vet"]
+[ext_resource type="Texture2D" uid="uid://b6x6nmcs2dp5n" path="res://assets/pixel_tick.png" id="4_owe6i"]
+
+[node name="OrderSlot" type="TextureRect"]
+texture = ExtResource("1_vx8oj")
+script = ExtResource("2_t0vet")
+
+[node name="Item" type="Sprite2D" parent="."]
+position = Vector2(24, 24)
+texture = ExtResource("2_6isig")
+
+[node name="Complete" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -8.0
+offset_right = 210.0
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_owe6i")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

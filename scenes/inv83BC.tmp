@@ -1,0 +1,259 @@
+[gd_scene load_steps=6 format=3 uid="uid://lp24yaxd2n81"]
+
+[ext_resource type="Script" path="res://scenes/inventory.gd" id="1_5g5vj"]
+[ext_resource type="Texture2D" uid="uid://bedsts8nuk6wb" path="res://assets/inventory/inventory_container.png" id="1_wsg8d"]
+[ext_resource type="Texture2D" uid="uid://1pm8o5lhrr8h" path="res://assets/inventory/inventory_slot.png" id="2_1nta4"]
+[ext_resource type="Texture2D" uid="uid://d2yksb1j8sw1o" path="res://assets/items/milk_empty.png" id="3_dajox"]
+[ext_resource type="Script" path="res://scenes/inventory_item.gd" id="5_bof50"]
+
+[node name="Inventory" type="CanvasLayer"]
+script = ExtResource("1_5g5vj")
+
+[node name="Container" type="TextureRect" parent="."]
+process_mode = 4
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -406.0
+offset_top = -270.0
+offset_right = -134.0
+offset_bottom = -190.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(3, 3)
+texture = ExtResource("1_wsg8d")
+
+[node name="Slot1" type="TextureRect" parent="Container"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -24.0
+offset_right = 56.0
+offset_bottom = 24.0
+grow_vertical = 2
+texture = ExtResource("2_1nta4")
+
+[node name="Item" type="TextureRect" parent="Container/Slot1"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.66667
+offset_top = -8.33333
+offset_right = 32.3333
+offset_bottom = 31.6667
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_dajox")
+script = ExtResource("5_bof50")
+
+[node name="Quantity" type="Label" parent="Container/Slot1"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "10"
+
+[node name="Slot2" type="TextureRect" parent="Container"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 60.0
+offset_top = -24.0
+offset_right = 108.0
+offset_bottom = 24.0
+grow_vertical = 2
+texture = ExtResource("2_1nta4")
+
+[node name="Item" type="TextureRect" parent="Container/Slot2"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.66667
+offset_top = -8.33333
+offset_right = 32.3333
+offset_bottom = 31.6667
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_dajox")
+
+[node name="Quantity" type="Label" parent="Container/Slot2"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "10"
+
+[node name="Slot3" type="TextureRect" parent="Container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1nta4")
+
+[node name="Item" type="TextureRect" parent="Container/Slot3"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.66667
+offset_top = -8.33333
+offset_right = 32.3333
+offset_bottom = 31.6667
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_dajox")
+
+[node name="Quantity" type="Label" parent="Container/Slot3"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "10"
+
+[node name="Slot4" type="TextureRect" parent="Container"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = -24.0
+offset_right = -60.0
+offset_bottom = 24.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_1nta4")
+
+[node name="Item" type="TextureRect" parent="Container/Slot4"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.66667
+offset_top = -8.33333
+offset_right = 32.3333
+offset_bottom = 31.6667
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_dajox")
+
+[node name="Quantity" type="Label" parent="Container/Slot4"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "10"
+
+[node name="Slot5" type="TextureRect" parent="Container"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -24.0
+offset_right = -8.0
+offset_bottom = 24.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_1nta4")
+
+[node name="Item" type="TextureRect" parent="Container/Slot5"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.66667
+offset_top = -8.33333
+offset_right = 32.3333
+offset_bottom = 31.6667
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_dajox")
+
+[node name="Quantity" type="Label" parent="Container/Slot5"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "10"
+
+[connection signal="gui_input" from="Container" to="." method="_on_container_gui_input"]
+[connection signal="gui_input" from="Container/Slot1/Item" to="Container/Slot1/Item" method="_on_gui_input"]

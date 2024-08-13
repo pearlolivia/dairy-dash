@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://ljn05foi6fb"]
+
+[ext_resource type="Texture2D" uid="uid://hhca0ytgo2al" path="res://assets/chest/chest_4.png" id="1_1fayt"]
+[ext_resource type="Script" path="res://scenes/chest.gd" id="1_nnieu"]
+[ext_resource type="Texture2D" uid="uid://di07ukh6y27ae" path="res://assets/chest/chest_3.png" id="2_lbf71"]
+[ext_resource type="Texture2D" uid="uid://bx4v56x2al6fc" path="res://assets/chest/chest_2.png" id="3_me4km"]
+[ext_resource type="Texture2D" uid="uid://bsxqqy1dp84yl" path="res://assets/chest/chest_1.png" id="4_db3a6"]
+[ext_resource type="Texture2D" uid="uid://cwisqd1iq4a6q" path="res://assets/chest/chest_0.png" id="5_e05tu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1qqt1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_e05tu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_db3a6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_me4km")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lbf71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_1fayt")
+}],
+"loop": false,
+"name": &"open",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aj6kq"]
+size = Vector2(50, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_snr4q"]
+size = Vector2(55, 50)
+
+[node name="Chest" type="StaticBody2D"]
+disable_mode = 1
+collision_layer = 8
+collision_mask = 6
+script = ExtResource("1_nnieu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_1qqt1")
+animation = &"open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2)
+shape = SubResource("RectangleShape2D_aj6kq")
+
+[node name="ChestCollider" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChestCollider"]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_snr4q")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="ChestCollider" to="." method="_on_chest_collider_area_entered"]
+[connection signal="area_exited" from="ChestCollider" to="." method="_on_chest_collider_area_exited"]

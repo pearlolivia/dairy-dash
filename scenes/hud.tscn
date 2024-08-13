@@ -1,0 +1,110 @@
+[gd_scene load_steps=7 format=3 uid="uid://cnq0dxnwrokui"]
+
+[ext_resource type="Texture2D" uid="uid://bedsts8nuk6wb" path="res://assets/inventory/inventory_container.png" id="1_1eb35"]
+[ext_resource type="Script" path="res://scenes/hud.gd" id="1_58weh"]
+[ext_resource type="Texture2D" uid="uid://c8kc1n2d7f60e" path="res://assets/items/milk_white.png" id="3_dtjfo"]
+[ext_resource type="FontFile" uid="uid://bb31u1jsyyk73" path="res://assets/monogram.ttf" id="4_lc2lt"]
+[ext_resource type="Texture2D" uid="uid://05o5y7hllhon" path="res://assets/pixel_coin.png" id="4_nkpeb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_masso"]
+bg_color = Color(0.898039, 0.403922, 0.454902, 1)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_58weh")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_right = 1366.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0.89906, 0.402348, 0.45507, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_masso")
+max_value = 150.0
+show_percentage = false
+
+[node name="Container" type="TextureRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -322.0
+offset_top = 16.0
+offset_right = 322.0
+offset_bottom = 288.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_1eb35")
+
+[node name="TextureRect" type="TextureRect" parent="Container"]
+layout_mode = 2
+offset_left = 457.0
+offset_top = 96.0
+offset_right = 497.0
+offset_bottom = 136.0
+scale = Vector2(2, 2)
+texture = ExtResource("3_dtjfo")
+
+[node name="Label" type="Label" parent="Container"]
+layout_mode = 2
+offset_left = 46.0
+offset_top = 104.0
+offset_right = 226.0
+offset_bottom = 168.0
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.396078, 0.192157, 0.0666667, 1)
+theme_override_fonts/font = ExtResource("4_lc2lt")
+theme_override_font_sizes/font_size = 80
+text = "Day:  "
+
+[node name="Orders" type="Label" parent="Container"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -38.0
+offset_right = -44.0
+offset_bottom = 34.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.196078, 0.0823529, 0.0156863, 1)
+theme_override_fonts/font = ExtResource("4_lc2lt")
+theme_override_font_sizes/font_size = 86
+text = "20"
+
+[node name="Day" type="Label" parent="Container"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 100.0
+offset_right = 230.0
+offset_bottom = 172.0
+theme_override_colors/font_color = Color(0.194271, 0.0814127, 0.0172128, 1)
+theme_override_fonts/font = ExtResource("4_lc2lt")
+theme_override_font_sizes/font_size = 86
+text = "99"
+
+[node name="TextureRect2" type="TextureRect" parent="Container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -30.0
+offset_right = -12.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_nkpeb")
+
+[node name="Coins" type="Label" parent="Container"]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 98.0
+offset_right = 450.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(0.196078, 0.0823529, 0.0156863, 1)
+theme_override_fonts/font = ExtResource("4_lc2lt")
+theme_override_font_sizes/font_size = 86
+text = "1510"

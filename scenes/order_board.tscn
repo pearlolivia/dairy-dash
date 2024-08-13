@@ -1,0 +1,165 @@
+[gd_scene load_steps=6 format=3 uid="uid://buqdpaimehift"]
+
+[ext_resource type="Script" path="res://scenes/order_board.gd" id="1_nkxsi"]
+[ext_resource type="Texture2D" uid="uid://dwd4g0d4qpvan" path="res://assets/inventory/large_board.png" id="1_r1gra"]
+[ext_resource type="PackedScene" uid="uid://d5vs8i5nmu22" path="res://scenes/order_slot.tscn" id="3_s5wf5"]
+[ext_resource type="FontFile" uid="uid://bb31u1jsyyk73" path="res://assets/monogram.ttf" id="4_xd32f"]
+[ext_resource type="Texture2D" uid="uid://dhvl3ftyaewvy" path="res://assets/exit-button.png" id="5_onh1e"]
+
+[node name="OrderBoard" type="CanvasLayer"]
+layer = 0
+script = ExtResource("1_nkxsi")
+
+[node name="Container" type="TextureRect" parent="."]
+offset_left = 300.0
+offset_top = 163.0
+offset_right = 556.0
+offset_bottom = 419.0
+scale = Vector2(3, 3)
+texture = ExtResource("1_r1gra")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -116.0
+offset_top = 40.0
+offset_right = 142.0
+offset_bottom = 88.0
+grow_horizontal = 2
+scale = Vector2(0.9, 0.9)
+
+[node name="Slot1" parent="Container/HBoxContainer" instance=ExtResource("3_s5wf5")]
+layout_mode = 2
+
+[node name="Slot2" parent="Container/HBoxContainer" instance=ExtResource("3_s5wf5")]
+layout_mode = 2
+
+[node name="Slot3" parent="Container/HBoxContainer" instance=ExtResource("3_s5wf5")]
+layout_mode = 2
+
+[node name="Slot4" parent="Container/HBoxContainer" instance=ExtResource("3_s5wf5")]
+layout_mode = 2
+
+[node name="Slot5" parent="Container/HBoxContainer" instance=ExtResource("3_s5wf5")]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -116.0
+offset_top = 86.0
+offset_right = 142.0
+offset_bottom = 134.0
+grow_horizontal = 2
+scale = Vector2(0.9, 0.9)
+
+[node name="Slot1" parent="Container/HBoxContainer2" instance=ExtResource("3_s5wf5")]
+layout_mode = 2
+
+[node name="Slot2" parent="Container/HBoxContainer2" instance=ExtResource("3_s5wf5")]
+layout_mode = 2
+
+[node name="Slot3" parent="Container/HBoxContainer2" instance=ExtResource("3_s5wf5")]
+layout_mode = 2
+
+[node name="Slot4" parent="Container/HBoxContainer2" instance=ExtResource("3_s5wf5")]
+layout_mode = 2
+
+[node name="Slot5" parent="Container/HBoxContainer2" instance=ExtResource("3_s5wf5")]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -116.0
+offset_top = 134.0
+offset_right = 142.0
+offset_bottom = 182.0
+grow_horizontal = 2
+scale = Vector2(0.9, 0.9)
+
+[node name="Slot1" parent="Container/HBoxContainer3" instance=ExtResource("3_s5wf5")]
+layout_mode = 2
+
+[node name="Slot2" parent="Container/HBoxContainer3" instance=ExtResource("3_s5wf5")]
+layout_mode = 2
+
+[node name="Slot3" parent="Container/HBoxContainer3" instance=ExtResource("3_s5wf5")]
+layout_mode = 2
+
+[node name="Slot4" parent="Container/HBoxContainer3" instance=ExtResource("3_s5wf5")]
+layout_mode = 2
+
+[node name="Slot5" parent="Container/HBoxContainer3" instance=ExtResource("3_s5wf5")]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -116.0
+offset_top = 184.0
+offset_right = 142.0
+offset_bottom = 232.0
+grow_horizontal = 2
+scale = Vector2(0.9, 0.9)
+
+[node name="Slot1" parent="Container/HBoxContainer4" instance=ExtResource("3_s5wf5")]
+layout_mode = 2
+
+[node name="Slot2" parent="Container/HBoxContainer4" instance=ExtResource("3_s5wf5")]
+layout_mode = 2
+
+[node name="Slot3" parent="Container/HBoxContainer4" instance=ExtResource("3_s5wf5")]
+layout_mode = 2
+
+[node name="Slot4" parent="Container/HBoxContainer4" instance=ExtResource("3_s5wf5")]
+layout_mode = 2
+
+[node name="Slot5" parent="Container/HBoxContainer4" instance=ExtResource("3_s5wf5")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Container"]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 18.0
+offset_right = 78.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0.397177, 0.19069, 0.064854, 1)
+theme_override_fonts/font = ExtResource("4_xd32f")
+theme_override_font_sizes/font_size = 30
+text = "Orders"
+
+[node name="Label2" type="Label" parent="Container"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_top = 20.0
+offset_right = -26.0
+offset_bottom = 43.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.396078, 0.192157, 0.0666667, 1)
+theme_override_fonts/font = ExtResource("4_xd32f")
+theme_override_font_sizes/font_size = 24
+text = "Day 1"
+horizontal_alignment = 2
+
+[node name="CloseButton" type="TextureRect" parent="."]
+offset_left = 996.0
+offset_top = 179.0
+offset_right = 1036.0
+offset_bottom = 219.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_onh1e")
+
+[connection signal="gui_input" from="Container" to="." method="_on_container_gui_input"]
+[connection signal="gui_input" from="CloseButton" to="." method="_on_close_button_gui_input"]

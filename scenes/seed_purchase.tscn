@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca5ibmbdp4lvf"]
+
+[ext_resource type="Texture2D" uid="uid://3nqtwtjq2ely" path="res://assets/items/item_09.png" id="1_n1s7n"]
+
+[node name="SeedPurchase" type="TextureRect"]
+texture = ExtResource("1_n1s7n")
+
+[node name="Quantity" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.5
+offset_top = 9.33333
+offset_right = 18.5
+offset_bottom = 21.3333
+theme_override_colors/font_color = Color(0, 0, 0.0352941, 1)
+theme_override_font_sizes/font_size = 8
+text = "10"

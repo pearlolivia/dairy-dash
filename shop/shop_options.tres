@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ShopOptions" load_steps=2 format=3 uid="uid://c3fbsb4pr6mvj"]
+
+[ext_resource type="Script" path="res://shop/shop_options.gd" id="1_0ye8j"]
+
+[resource]
+script = ExtResource("1_0ye8j")
+options = Array[Resource("res://shop/shop_item.gd")]([])

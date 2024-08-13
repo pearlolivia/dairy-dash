@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch0p3rwal573s"]
+
+[ext_resource type="Script" path="res://scenes/plant_spot.gd" id="1_115n8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_paf44"]
+size = Vector2(17, 16)
+
+[node name="PlantSpot" type="ColorRect"]
+visible = false
+offset_left = 6.33333
+offset_top = 2.0
+offset_right = 22.3333
+offset_bottom = 18.0
+color = Color(1, 0.0117647, 0.141176, 0.239216)
+script = ExtResource("1_115n8")
+
+[node name="PlantSpotCollider" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlantSpotCollider"]
+position = Vector2(8.16667, 8)
+shape = SubResource("RectangleShape2D_paf44")
+
+[node name="Marker2D" type="Marker2D" parent="." groups=["plant_spots"]]
+position = Vector2(8, 8)
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="body_entered" from="PlantSpotCollider" to="." method="_on_plant_collider_body_entered"]
+[connection signal="body_exited" from="PlantSpotCollider" to="." method="_on_plant_collider_body_exited"]

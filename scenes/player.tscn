@@ -1,0 +1,123 @@
+[gd_scene load_steps=22 format=3 uid="uid://bqkbc4sevjv70"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_t5jkh"]
+[ext_resource type="Texture2D" uid="uid://dxabt4iupybpw" path="res://assets/player/teemoo_00.png" id="2_okt6i"]
+[ext_resource type="Resource" uid="uid://b4ubovkeul1vc" path="res://inventory/main_inventory.tres" id="2_porsi"]
+[ext_resource type="Texture2D" uid="uid://bhx66xxbsn1cq" path="res://assets/player/teemoo_01.png" id="3_lwdjq"]
+[ext_resource type="Texture2D" uid="uid://bw3cew8u55kmx" path="res://assets/player/teemoo_02.png" id="4_r7erl"]
+[ext_resource type="Texture2D" uid="uid://cpxw3c7j6t8qa" path="res://assets/player/teemoo_03.png" id="5_2m12f"]
+[ext_resource type="Texture2D" uid="uid://fbibm5qqaewu" path="res://assets/player/teemoo_08.png" id="6_wekx0"]
+[ext_resource type="Texture2D" uid="uid://tesepugnv2no" path="res://assets/player/teemoo_09.png" id="7_h71x6"]
+[ext_resource type="Texture2D" uid="uid://bfminth3gv4uu" path="res://assets/player/teemoo_10.png" id="8_mfj3d"]
+[ext_resource type="Texture2D" uid="uid://b2vjtj58r3soi" path="res://assets/player/teemoo_11.png" id="9_jkjgu"]
+[ext_resource type="Texture2D" uid="uid://wgnowcb573no" path="res://assets/player/teemoo_12.png" id="10_1tb8f"]
+[ext_resource type="Texture2D" uid="uid://8ec7mc0k2cnq" path="res://assets/player/teemoo_13.png" id="11_psor4"]
+[ext_resource type="Texture2D" uid="uid://c3sxxa16gqvw2" path="res://assets/player/teemoo_14.png" id="12_apteo"]
+[ext_resource type="Texture2D" uid="uid://d38ujwxliji8v" path="res://assets/player/teemoo_15.png" id="13_ee72a"]
+[ext_resource type="Texture2D" uid="uid://swbsoylhsy0w" path="res://assets/player/teemoo_04.png" id="14_fwqcn"]
+[ext_resource type="Texture2D" uid="uid://bjqdj13w8temx" path="res://assets/player/teemoo_05.png" id="15_ygbuk"]
+[ext_resource type="Texture2D" uid="uid://cfhmdjvike1f2" path="res://assets/player/teemoo_06.png" id="16_qsev8"]
+[ext_resource type="Texture2D" uid="uid://b616n57a24d1v" path="res://assets/player/teemoo_07.png" id="17_hgjvs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1hs6f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_okt6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lwdjq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r7erl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2m12f")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_wekx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_h71x6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mfj3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jkjgu")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_1tb8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_psor4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_apteo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ee72a")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_fwqcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ygbuk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_qsev8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_hgjvs")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3660"]
+size = Vector2(38, 50.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpdbf"]
+size = Vector2(42.5, 54)
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 1
+position = Vector2(688, 636)
+collision_layer = 2
+collision_mask = 157
+script = ExtResource("1_t5jkh")
+inventory = ExtResource("2_porsi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3.5, 3.5)
+sprite_frames = SubResource("SpriteFrames_1hs6f")
+animation = &"walk_down"
+frame_progress = 0.962545
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_e3660")
+
+[node name="PlayerCollider" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 93
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollider"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_jpdbf")

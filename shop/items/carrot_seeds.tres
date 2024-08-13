@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ShopItem" load_steps=4 format=3 uid="uid://c6qmdcb4lwbpl"]
+
+[ext_resource type="Script" path="res://shop/shop_item.gd" id="1_8l6wm"]
+[ext_resource type="Resource" uid="uid://c4i2udky5x70o" path="res://inventory/items/carrot_seeds.tres" id="1_ypka7"]
+[ext_resource type="Texture2D" uid="uid://sa81luafs3yr" path="res://assets/items/item_20.png" id="2_220i2"]
+
+[resource]
+script = ExtResource("1_8l6wm")
+item = ExtResource("1_ypka7")
+item_name = "Carrot Seeds"
+product = ExtResource("2_220i2")
+price = 2.0

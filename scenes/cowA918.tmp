@@ -1,0 +1,88 @@
+[gd_scene load_steps=15 format=3 uid="uid://dl1rn00y6ycum"]
+
+[ext_resource type="Script" path="res://scenes/cow.gd" id="1_oftpy"]
+[ext_resource type="Texture2D" uid="uid://d2s28g4245m38" path="res://assets/cows/white/l0_cow_1.png" id="1_t2hwi"]
+[ext_resource type="Texture2D" uid="uid://c5jc4kf4v5l86" path="res://assets/cows/white/l0_cow_2.png" id="2_dmp2n"]
+[ext_resource type="Texture2D" uid="uid://chacjirixkqee" path="res://assets/cows/white/l0_cow_3.png" id="3_04ysq"]
+[ext_resource type="Texture2D" uid="uid://bhfrgilgt1gys" path="res://assets/cows/white/l0_cow_4.png" id="4_ewpw5"]
+[ext_resource type="Texture2D" uid="uid://duq25hixt2ug" path="res://assets/cows/white/l0_cow_5.png" id="5_tappy"]
+[ext_resource type="Texture2D" uid="uid://r23hqjo8mhgw" path="res://assets/cows/blue/blue_cow_0.png" id="6_x1uhp"]
+[ext_resource type="Texture2D" uid="uid://bu08ie0cmya2w" path="res://assets/cows/blue/blue_cow_1.png" id="7_bwccq"]
+[ext_resource type="Texture2D" uid="uid://dm202njbfbklm" path="res://assets/cows/blue/blue_cow_2.png" id="8_4d416"]
+[ext_resource type="Texture2D" uid="uid://bqvi004ur1s2g" path="res://assets/cows/blue/blue_cow_3.png" id="9_w1301"]
+[ext_resource type="Texture2D" uid="uid://bcekfd3wry54h" path="res://assets/cows/blue/blue_cow_4.png" id="10_ckv78"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c0gp2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_x1uhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bwccq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4d416")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_w1301")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ckv78")
+}],
+"loop": true,
+"name": &"walk_blue",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t2hwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dmp2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_04ysq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ewpw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tappy")
+}],
+"loop": true,
+"name": &"walk_white",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14uk7"]
+size = Vector2(66, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6dcg"]
+size = Vector2(74.4, 45.6)
+
+[node name="Cow" type="CharacterBody2D"]
+scale = Vector2(1.25, 1.25)
+collision_layer = 4
+collision_mask = 27
+script = ExtResource("1_oftpy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_c0gp2")
+animation = &"walk_white"
+autoplay = "walk_white"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(4, 14.5)
+shape = SubResource("RectangleShape2D_14uk7")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2.8, 13.2)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_k6dcg")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
